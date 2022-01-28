@@ -1,0 +1,33 @@
+---
+title: "Manipulation de données avec R (partie 1)"
+subtitle: "Exercice"
+author: ""
+date: ""
+output:
+  unhcrdown::docx_simple:
+    toc: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+extrafont::loadfonts(quiet = TRUE)
+options(scipen = 999) # turn-off scientific notation like 1e+48
+```
+
+## Travail à faire: Manipulation de données
+
+### 1.1
+Créez un projet R dans lequel vous copierez le fichier `vols.csv` dans un sous-dossier `data`.
+
+ * `dossier_projet`
+   - `data`
+     * `vols.csv`
+   - `exo2.R`
+
+
+### 1.2
+Sélectionnez les vols des compagnies Delta et American (codes `DL` et `AA` de la variable `carrier`) qui ont fait avant le mois de septembre. Vous nommerez votre table `vols1`.
+
+### 1.3
+Selectionner les 20 premières observations de la table `vols1` en ne selectionnant que les colonnes `carrier`, `origin`, `dest` et `air_time`.

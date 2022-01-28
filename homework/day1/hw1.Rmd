@@ -1,0 +1,80 @@
+---
+title: "Prise en main de R"
+subtitle: "Exercice"
+author: ""
+date: ""
+output:
+  unhcrdown::docx_simple:
+    toc: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+extrafont::loadfonts(quiet = TRUE)
+options(scipen = 999) # turn-off scientific notation like 1e+48
+```
+
+## Créer des vecteurs dans R
+
+Pour créer des vecteurs, on utilise la fonction `c`, `c` est le diminutif de
+**concatenate** qu'on utiliser pour concatener des objets de même nature ensmemble i.e chiffres ensemble, chaîne de caractère ensemble et booléen ensemble (`TRUE` et `FALSE`).
+
+### Vecteur de booléen
+
+```{r}
+b <- c(TRUE, TRUE, FALSE)
+b
+```
+
+### Vecteur de chaîne de caractère
+
+```{r}
+s <- c("a", "b", "unhcr")
+s
+```
+
+### Vecteur de chaîne de caractère
+
+```{r}
+n <- c(1.2, 10, 0.5, 1e2)
+n
+```
+
+### Opération sur vecteur
+
+On peut ajouter un élément à chaque élément d'un vecteur
+
+```{r}
+n + 1
+```
+
+Ou faire d'autre opérations (multiplication, division, etc)
+
+```{r}
+n * 5
+```
+
+
+## Travail à faire: calcul de l'indice de masse corporelle
+
+ L’indice de masse corporelle ou IMC est une grandeur qui permet d'estimer la corpulence d’une personne en fonction de sa taille et sa masse corporelle (Wikipedia).
+
+$$
+IMC = \dfrac{poids}{taille^2}
+$$
+
+
+Avec le $poids$ en **kilogramme** et la taille en **mètre**.
+
+Dans un camps de refugié, un nutritioniste mesure la taille et poids de 5 personnes.
+
+
+| **taille (cm)** | 174 | 181 | 169 | 157 | 210 |
+|-------------|-----|-----|-----|-----|-----|
+| **poids (kg)**  | 66  | 95  | 48  | 60  | 160 |
+
+
+Calculer l'imc en utilisant le calcul vectoriel et en créant au préalable un vecteur `taille` puis un vecteur `poids`. Stocker le résultat dans un vecteur que vous nommerez `imc`.
+
+PS: N'oubliez pas de créer un dossier, un projet `RStudio` et un script avec la solution pour répondre aux questions.

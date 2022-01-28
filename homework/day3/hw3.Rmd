@@ -1,0 +1,40 @@
+---
+title: "Manipulation de données avec R (partie 1/2)"
+subtitle: "Exercice"
+author: ""
+date: ""
+output:
+  unhcrdown::docx_simple:
+    toc: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+extrafont::loadfonts(quiet = TRUE)
+options(scipen = 999) # turn-off scientific notation like 1e+48
+```
+
+## Travail à faire: Manipulation de données
+
+Vous utiliserez le même dossier que celui de l'exercice 2 et rajouterai un autre script pour l'exercice 3. L'arboresence devra ressembler à (remplacer `dossier_projet` par le dossier que vous avez utilisé pour l'exercice 2):
+
+ * `dossier_projet`
+   - `dossier_projet.Rproj`
+   - `data`
+     * `vols.csv`
+   - `exo2.R`
+   - `exo3.R`
+
+
+### Vitesse des vols
+La vitesse en `km/h` se calcule en divisant la distance par la durée.
+
+$$
+vitesse = \dfrac{distance}{duree}
+$$
+
+Où la distance est en `km` et la durée en `heure` (avec décimale).
+
+En utilisant la table `vols.csv`, rajouter une colonne `vitesse` qui donne la `vitesse` de chaque vol et trier la resultat du vol le plus lent à celui le plus rapide. Afficher les 20 premières lignes de la table trié avec les colonnes `carrier`, `distance`, `air_time`, `distance_km`, `air_time_h`, `vitesse`.
+Les colonnes `distance_km` et `air_time_h` sont des propositions de noms pour les colonnes que vous allez créer afin de calculer la vitesse.

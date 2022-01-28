@@ -1,0 +1,34 @@
+---
+title: "Manipulation et visualisation de données avec R"
+subtitle: "Exercice"
+author: ""
+date: ""
+output:
+  unhcrdown::docx_simple:
+    toc: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+extrafont::loadfonts(quiet = TRUE)
+options(scipen = 999) # turn-off scientific notation like 1e+48
+```
+
+## Calcul du nombre de refugiés par pays d'asyle
+
+### 1.1
+Créez un dossier avec l'arboresence suivante (remplacer `dossier_projet` par le dossier que vous avez utilisé pour l'exercice 2):
+
+ * `dossier_projet`
+   - `dossier_projet.Rproj`
+   - `data`
+     * `asr_demo.csv`
+   - `exo4.R`
+
+
+### 1.2
+Ouvrez la table `asr_demo.csv` et calculez le nombre total de refugiés par pays d'asyle pour les pays d'asyle suivants: Mali, Burkina Faso, Niger, Tchad , Cameroun et Republique Centrafricaine.
+
+### 1.3
+Stocker le resultat en mémoire et faite un diagramme en barre du nombre de refugiés par pays en utilisant le package `ggplot2` (vous pouvez utiliser l'interface `ggplot2 builder` dans le menu `Addins` de `RStudio`)

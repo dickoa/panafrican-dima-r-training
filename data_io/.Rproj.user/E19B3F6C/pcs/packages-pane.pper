@@ -1,0 +1,7 @@
+{
+    "installOptions": {
+        "installFromRepository": true,
+        "libraryPath": "/usr/lib/R/library",
+        "installDependencies": true
+    }
+}
