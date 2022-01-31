@@ -1,12 +1,11 @@
 ---
-title: "R and RStudio installation"
+title: "Install R and RStudio"
 author: "Panafrican DIMA R training team"
 date: ""
 output: unhcrdown::docx_simple
 ---
 
-
-## R installation
+## Install R
 
 To install `R` on **Windows**, we need to go to this page:
 <http://cran.r-project.org/bin/windows/base/> and follow the first link
@@ -21,26 +20,26 @@ For **Mac OS X**, the installation files are available at
 
 ![](R_mac.png)
 
-## RStudio installation
+## Install RStudio
 
 `Rstudio` need to be installed after `R` and to do that, you need to follow this url
-<http://www.rstudio.com/products/rstudio/download/>. pour télécharger la dernière
-version stable de **RStudio**. Plus précisément, il s'agit de l'édition *Open Source*
-de **RStudio Desktop** (en effet, il existe aussi une version serveur).
+<http://www.rstudio.com/products/rstudio/download/>.
 
-Choisissez l'installateur correspondant à votre système d'exploitation et suivez
-les instructions du programme d'installation.
+![](rstudio-install11.png)
 
-Si vous voulez tester les dernières fonctionnalités de **RStudio**, vous pouvez
-télécharger la version de développement (plus riche en fonctionnalités que la
-version stable, mais pouvant contenir des bugs) sur
-<http://www.rstudio.com/products/rstudio/download/preview/>.
+And then you select the installer corresponding to your operating system.
 
-## Installation des packages tidyverse et esquisse
+![](rstudio-install2.png)
 
-Pour cette formation, nous allons utiliser plusieurs packages (add-on) **R** qu'il faudra installer
-au préalable. Il s'agit des packages **tidyverse** et le package **esquisse**.
+## Install the R package tidyverse
 
-Je vous conseille la lecture de ce billet qui explique comment faire l'installation de R, **RStudio** et des packages:
+`tidyverse` is a metapackage we will use during this training. You can do it from the command line, if you are familiar with `R` using the following code:
 
-https://quanti.hypotheses.org/1813
+```{r, eval = FALSE}
+install.packages("tidyverse", repos = "https://cloud.r-project.org/")
+```
+
+You can also use directly `RStudio` and its menu. You will need to go through the **`Package`** tab, then the **`Install`** tab and in the dialog box you have to type **`tidyverse`** in the text area.
+
+
+![](tidyverse-install1.png)
