@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Warming Up with R</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2022-02-15" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="https://use.fontawesome.com/5235085b15.js"></script>
+    <link rel="stylesheet" href="unhcr-slides.css" type="text/css" />
+    <link rel="stylesheet" href="unhcr-slides-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Warming Up with R
+## Day 2
+### 
+### DIMA Units of Regional Bureaux: EHAGL, SA and WCA
+### 15 February 2022
+
+---
+
+layout: true
+
+&lt;div class="my-footer"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt; 
+
+
+
+---
+# Today will be about:
+
+* Understanding basics
+
+* Recap of packages
+
+* Data import and export
+
+* Organising your project
+
+
+---
+#1. Understanding basics
+
+### How R works?
+
+* R stores objects in memory (RAM) of your computer temporarily.
+
+  + Objects appear in the Environment pane.
+  
+  + Objects could be anything.
+  
+  + Focus on 'data objects': vector, list, data frame, etc. 
+
+
+---
+# Understanding basics
+
+### Basic code writing in R
+
+* Commenting with #
+
+* Code chunks
+
+* Assignment operation with &lt;-
+  + = also can be used but &lt;- is conventional.
+  
+* Access to element with brackets, e.g., `vec_b[1]`
+
+
+Take a look at the provided script for more examples, 1_pre_script_basic.R
+
+---
+# Recap of packages
+
+####### "Packages are the fundamental units of reproducible R code."
+
+* Install by writing a code
+
+```r
+install.packages("tidyverse")
+```
+* Install by clicking in RStudio
+
+* Let R know the package to use
+
+```r
+library(tidyverse)
+```
+
+
+---
+# Recap of packages
+
+In RStudio, documents of packages are accessible in Help tab.
+
+```r
+?`readxl-package`
+```
+To see help of specific function, type the question mark with the package name, e.g., `?read_xls`.
+
+```r
+read_xls(path, sheet = NULL, range = NULL, col_names = TRUE,
+  col_types = NULL, na = "", trim_ws = TRUE, skip = 0,
+  n_max = Inf, guess_max = min(1000, n_max),
+  progress = readxl_progress(), .name_repair = "unique")
+```
+You can check which arguments are needed. Then type the argument as you need.
+
+---
+# Data import and export
+
+### Setting working directory
+
+* Absolute and relative path: Recommended to use relative path.
+* `here()` package
+
+```r
+install.packages("here")
+library(here)
+here()
+```
+
+
+
+---
+# Data import and export
+
+### Import
+
+* Use the dropdown menu (File &gt; Import Dataset)
+* Navigate in Files tab
+* **Write a script with packages and functions**
+
+The packages we need are: `readxl` to read excel, `writexl` to export data frame to excel, `haven` to read data in various formats such as .csv, Stata (.dta) and SPSS (.sav), and `pdftools` to read pdf.
+
+
+---
+# Data import and export
+
+### Import
+
+* csv: Refugee data of ASR 2020 from [Population Statistics Reference](https://popdata.unhcr.org/)
+* Stata (.dta): Survey data, Understanding the socioeconomic conditions of refugees in Kalobeyei, Kenya 2018, from [RIDL](https://ridl.unhcr.org/dataset/ddi-unhcr-ken-socioeconomic-kalobei-survey-2018-v1-0)
+* excel: Resettlement data from [Resettlement Statistics Report](https://rsr.unhcr.org/)
+* pdf: South Africa government data of PoCs
+
+### Export
+
+Take a look at the provided script, 2-3_pre_script_package_import.R
+---
+# Data import and export
+
+### Import directly from packages
+
+* UNHCR Open data from [Refugee Data Finder](https://www.unhcr.org/refugee-statistics/)
+
+```r
+install.packages("remotes") # install a required package
+library(remotes)
+remotes::install_github('unhcr/unhcrdatapackage') # install unhcrdatapackage
+library(unhcrdatapackage)
+
+popdata &lt;- unhcrdatapackage::end_year_population_totals_long
+head(popdata)
+```
+
+* World Bank Open data
+
+```r
+install.packages("wbstats")
+library(wbstats)
+
+wb_ind &lt;- c("NY.GDP.PCAP.CD", "NY.GDP.PCAP.KD.ZG", "FP.CPI.TOTL.ZG", "SI.POV.DDAY")
+wb_df &lt;- wb_data(indicator = wb_ind, country = "COD",
+                 start_date = 1960, end_date = 2021)
+```
+
+
+---
+# Organising your project
+
+* Not recommended to store your workspace as .RData
+  + Change it in Tools &gt; Global Options in RStudio
+  
+&lt;img src="./images/workspace.png" width="228" style="display: block; margin: auto;" /&gt;
+
+---
+# Organising your project
+
+.pull-left[
+* Your project will be usually consisted of:
+  + Data
+  + Script
+  + Results
+  + Auxiliary files
+]
+
+.pull-right[
+&lt;img src="./images/file_structure.png" width="215" style="display: block; margin: auto;" /&gt;
+]
+
+* Recommend to start with [Github](https://github.com) for version control
+
+---
+# Further reading
+
+[R for Beginners](https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf)
+
+[R for Data Science](https://r4ds.had.co.nz/workflow-projects.html)
+
+[Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
