@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to R in Africa</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="DIMA Units of Regional Bureaux: East and Horn of Africa and the Great Lakes, Southern Africa, West and Central Africa" />
+    <meta name="date" content="2022-02-10" />
+    <script src="intro-presentation_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="C:\Users\FEITOSAV\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\UNHCRD~1\RESOUR~1\css\COLOR_~1.CSS" type="text/css" />
+    <link rel="stylesheet" href="C:\Users\FEITOSAV\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\UNHCRD~1\RESOUR~1\css\fonts.css" type="text/css" />
+    <link rel="stylesheet" href="C:\Users\FEITOSAV\AppData\Local\Temp\RtmpSq8w5N\file24fc592b8bd.css" type="text/css" />
+    <link rel="stylesheet" href="C:\Users\FEITOSAV\ONEDRI~1\DOCUME~1\R\WIN-LI~1\4.1\UNHCRD~2\RESOUR~1\css\HTML_S~1.CSS" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to R in Africa
+## Day 1
+### <strong>DIMA Units of Regional Bureaux</strong>: East and Horn of Africa and the Great Lakes, Southern Africa, West and Central Africa
+### 10 February 2022
+
+---
+
+
+
+
+# Introductory remarks
+
+---
+
+## Pre-workshop survey: reminder!
+
+We invite all participants to take part in this 3-minute **survey**.
+  
+If you haven't taken part, there's still time. 
+  
+&lt;https://enketo.unhcr.org/x/R4L2j3eM&gt; 
+  
+*You can also find the link in the chat.*
+
+---
+
+## The facilitators
+Ahmadou Dicko                               | Hyunju Park       | Vinicius Feitosa
+------------------------------------------- | ----------------- | ----------------
+West and Central Africa                     | Southern Africa   | East and Horn of Africa and the Great Lakes
+---
+
+## The participants
+Focused on staff working with IM, Statistics and Data Analysis, ODM, Registration, Economics, Monitoring &amp; Evaluation etc. 
+ 
+  
+  
+**Where are you based?**
+*Please write in the chat*
+
+---
+
+## Poll
+Have you already installed R and R Studio?
+  
+*Please answer in the pop-up window*
+
+---
+
+## Pre-workshop requirements
+* R (Base R)
+* RStudio
+
+### Extra tools (setting up accounts)
+* R Cloud
+* GitHub
+
+---
+
+## Training objectives
+* English
+* From 14 to 18 February 2022 (Monday through Friday)
+  + Dakar: 12:00 - 14:00
+  + Pretoria: 14:00 - 16:00
+  + Nairobi: 15:00 - 17:00
+
+---
+
+## Training objectives (cont.)
+* Assessment of current capacity within the regions in Africa
+* Raise awareness on how R has been used within UNHCR
+* Use examples and datasets that are relevant to the regions
+* Community building
+  + UNHCR Learn and Connect
+  + R Teams Group
+
+---
+
+# Introduction to R
+
+---
+
+## What is R?
+* Statistical programming language
+* Text interface (no graphical user interface)
+
+## Why use R?
+* 100% free
+* Support community
+* Transparent, easily shareable and reproducible
+
+---
+
+## R and the data cycle
+1. Capture
+2. Handling
+3. Storage
+4. Analysis
+5. Dissemination
+
+### Examples
+
+---
+
+## No experience in coding?
+* Let RStudio guide you
+  + Start with basic commands
+  + Be curious to see the end results
+* Developing a new relationship
+  + There is nothing more *frustrating* than when your code does not work...
+  + There is nothing more *satisfying* than when your code *does* work!
+  
+---
+
+## Installation
+* R from &lt;https://cran.r-project.org/&gt;
+* RStudio from ,https://www.rstudio.com/products/rstudio/download/&gt;
+* [Link to installation guide](https://unhcr365-my.sharepoint.com/:w:/g/personal/park_unhcr_org/EXXoWfinhuNCrcXRg_puJV8BA3CXVgZRBTi6xOZ77Ohs3g?e=trAUPe&amp;CID=9EC29B31-9E5B-46D6-9A8B-969BADEED52E&amp;wdLOR=cE0A02148-7897-44F4-823A-3DE3BB8AE54D)
+
+---
+
+## What is the difference between R and R Studio?
+* To use R, we will need to download two first download R (Base R) and RStudio.
+  + Base R is the basic software which contains the R programming language and packages that were created by original R authors. It does not come with a graphical interface by default.
+  + RStudio is a full "Integrated Development Environment" (IDE), i.e., the software the makes R programming easier. We will use it as a place where we can keep scripts, plots and R outputs together in one single place.
+
+  
+* Open source and free
+
+---
+
+## RStudio panes
+1. Source
+  + Where you write your code, which will be "Run" to the console.
+2. Console
+  + Where your code is evaluated by R
+3. Environment / History
+4. Files / Plots / Packages / Help
+
+### Appearances
+
+---
+
+## Packages
+* Fundamental unit of shareable code
+* Comprehensive R Archive Network
+
+### Installing packages
+
+```r
+install.packages("tidyverse", repos = "https://cloud.r-project.org/")
+```
+
+### Loading packages
+
+```r
+library(tidyverse)
+```
+
+---
+
+# UNHCRverse
+
+---
+
+## Institutional tools
+* unhcrdown
+* unhcrdatapackage
+* hcrdata
+* HighFrequencyChecks
+* koboloadeR
+
+### GitHub
+
+---
+
+# Questions?
+
+---
+
+# Day 1 Recap
+
+---
+
+## Recap
+* Installation of R and R Studio
+* Difference between R and R Studio
+* Basics of interface and basic commands with R Studio
+* Introduction of unhcRverse
+
+## Additional resources
+* UNHCR Learn and Connect (LinkedIn)
+* RStudio Cheatsheets &lt;https://www.rstudio.com/resources/cheatsheets/&gt;
+
+---
+
+## Tomorrow
+* Organizing your data project
+  + Export / Import data
+  + Using R for population statistics
+  + Using R with Kobo
+  
+---
+
+# Thank you and see you tomorrow!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"countIncrementalSlides": "no",
+"highlightLines": "yes",
+"highlightStyle": "github",
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="footer"><span></span></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
