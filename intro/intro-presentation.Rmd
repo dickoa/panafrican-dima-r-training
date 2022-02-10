@@ -87,8 +87,15 @@ Have you already installed R and R Studio?
 ---
 
 ## What is R?
+:::::::::::::: {.columns}
+::: {.column}
 * Statistical programming language
 * Text interface (no graphical user interface)
+:::
+::: {.column}
+![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/code_meme.jpg?raw=true)
+:::
+::::::::::::::
 
 ## Why use R?
 :::::::::::::: {.columns}
@@ -98,7 +105,7 @@ Have you already installed R and R Studio?
 * Transparent, easily shareable and reproducible
 :::
 ::: {.column}
-![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/code_meme.jpg?raw=true)
+![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/community_meme.png?raw=true)
 :::
 ::::::::::::::
 
@@ -123,29 +130,43 @@ Have you already installed R and R Studio?
 ---
 
 ## No experience in coding?
+:::::::::::::: {.columns}
+::: {.column}
 * Let RStudio guide you
   + Start with basic commands
   + Be curious to see the end results
 * Developing a new relationship
   + There is nothing more *frustrating* than when your code does not work...
   + There is nothing more *satisfying* than when your code *does* work!
-  
+:::
+::: {.column}
+![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/relationship_meme.jpg?raw=true)
+:::
+::::::::::::::
+
 ---
 
 ## Installation
 * R from <https://cran.r-project.org/>
-* RStudio from ,https://www.rstudio.com/products/rstudio/download/>
+* RStudio from <https://www.rstudio.com/products/rstudio/download/>
 * [Link to installation guide](https://unhcr365-my.sharepoint.com/:w:/g/personal/park_unhcr_org/EXXoWfinhuNCrcXRg_puJV8BA3CXVgZRBTi6xOZ77Ohs3g?e=trAUPe&CID=9EC29B31-9E5B-46D6-9A8B-969BADEED52E&wdLOR=cE0A02148-7897-44F4-823A-3DE3BB8AE54D)
 
 ---
 
 ## What is the difference between R and R Studio?
+:::::::::::::: {.columns}
+::: {.column}
 * To use R, we will need to download two first download R (Base R) and RStudio.
   + Base R is the basic software which contains the R programming language and packages that were created by original R authors. It does not come with a graphical interface by default.
   + RStudio is a full "Integrated Development Environment" (IDE), i.e., the software the makes R programming easier. We will use it as a place where we can keep scripts, plots and R outputs together in one single place.
-
+  
   
 * Open source and free
+:::
+::: {.column}
+![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/rstudio_logo.jpg?raw=true)
+:::
+::::::::::::::
 
 ---
 
@@ -162,6 +183,8 @@ Have you already installed R and R Studio?
 ---
 
 ## Packages
+:::::::::::::: {.columns}
+::: {.column}
 * Fundamental unit of shareable code
 * Comprehensive R Archive Network
 
@@ -174,10 +197,22 @@ install.packages("tidyverse", repos = "https://cloud.r-project.org/")
 ```{r, eval = FALSE}
 library(tidyverse)
 ```
+:::
+::: {.column}
+![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/package.png?raw=true)
+:::
+::::::::::::::
 
 ---
 
+:::::::::::::: {.columns}
+::: {.column}
 # UNHCRverse
+:::
+::: {.column}
+![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/tidyverse_meme.png?raw=true)
+:::
+::::::::::::::
 
 ---
 
