@@ -91,13 +91,22 @@ Have you already installed R and R Studio?
 * Text interface (no graphical user interface)
 
 ## Why use R?
+:::::::::::::: {.columns}
+::: {.column}
 * 100% free
 * Support community
 * Transparent, easily shareable and reproducible
+:::
+::: {.column}
+![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/code_meme.jpg?raw=true)
+:::
+::::::::::::::
 
 ---
 
 ## R and the data cycle
+:::::::::::::: {.columns}
+::: {.column}
 1. Capture
 2. Handling
 3. Storage
@@ -105,6 +114,11 @@ Have you already installed R and R Studio?
 5. Dissemination
 
 ### Examples
+:::
+::: {.column}
+![](https://github.com/dickoa/panafrican-dima-r-training/blob/main/intro/images/unhcrverse.png?raw=true)
+:::
+::::::::::::::
 
 ---
 
