@@ -52,28 +52,12 @@ layout: true
   
   + Focus on 'data objects': vector, list, data frame, etc. 
 
-
----
-# Understanding basics
-
 ### Basic code writing in R
-
-* Commenting with #
-
-* Code chunks
-
-* Assignment operation with &lt;-
-  + = also can be used but &lt;- is conventional.
-  
-* Access to element with brackets, e.g., `vec_b[1]`
-
-
-Take a look at the provided script for more examples, 1_pre_script_basic.R
 
 ---
 # Recap of packages
 
-####### "Packages are the fundamental units of reproducible R code."
+##### "Packages are the fundamental units of reproducible R code."
 
 * Install by writing a code
 
@@ -88,24 +72,11 @@ install.packages("tidyverse")
 library(tidyverse)
 ```
 
-
----
-# Recap of packages
-
 In RStudio, documents of packages are accessible in Help tab.
 
 ```r
-?`readxl-package`
+?`tidyverse`
 ```
-To see help of specific function, type the question mark with the package name, e.g., `?read_xls`.
-
-```r
-read_xls(path, sheet = NULL, range = NULL, col_names = TRUE,
-  col_types = NULL, na = "", trim_ws = TRUE, skip = 0,
-  n_max = Inf, guess_max = min(1000, n_max),
-  progress = readxl_progress(), .name_repair = "unique")
-```
-You can check which arguments are needed. Then type the argument as you need.
 
 ---
 # Data import and export
@@ -147,13 +118,12 @@ The packages we need are: `readxl` to read excel, `writexl` to export data frame
 
 ### Export
 
-Take a look at the provided script, 2-3_pre_script_package_import.R
 ---
 # Data import and export
 
 ### Import directly from packages
 
-* UNHCR Open data from [Refugee Data Finder](https://www.unhcr.org/refugee-statistics/)
+* UNHCR open data from [Refugee Data Finder](https://www.unhcr.org/refugee-statistics/)
 
 ```r
 install.packages("remotes") # install a required package
@@ -165,7 +135,7 @@ popdata &lt;- unhcrdatapackage::end_year_population_totals_long
 head(popdata)
 ```
 
-* World Bank Open data
+* World Bank open data
 
 ```r
 install.packages("wbstats")
@@ -212,6 +182,11 @@ wb_df &lt;- wb_data(indicator = wb_ind, country = "COD",
 [Project-oriented workflow](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
 
 
+---
+
+# Tomorrow (Day 3) will be about:
+
+* Data manipulation: Selecting column, filtering, sorting, grouping, summarise, rename, create new columns, and so on.
 
 
 
