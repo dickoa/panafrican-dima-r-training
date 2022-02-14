@@ -20,21 +20,21 @@ library(here)
 ##### Working directory
 
 here() # check the current working directory
-setwd("~/UNHCR")
+#setwd("~/UNHCR")
 
 ############################################################################
 ##### Import data
 
 ##### csv: Refugee data of ASR 2020
 
-asr <- read_csv2(here("data_import", "data", "asr-refugees-2021.csv")) # tidyverse package
+asr <- read_csv2(here("data", "asr-refugees-2021.csv")) # tidyverse package
 head(asr)
 names(asr)                
 
 ############################################################################
 ##### Stata: Survey data, Understanding the socioeconomic conditions of refugees in Kalobeyei, Kenya 2018
 
-survey <- read_dta(here("data_import", "data", "ken-sesurvey-2018-edu.dta")) # haven package
+survey <- read_dta(here("data", "ken-sesurvey-2018-edu.dta")) # haven package
 
 head(survey)
 names(survey)  
@@ -42,7 +42,7 @@ names(survey)
 ############################################################################
 ##### excel: Resettlement data
 
-rst <- read_xls(here("data_import", "data", "rst-sa-summary-dep-202112.xls"),
+rst <- read_xls(here("data", "rst-sa-summary-dep-202112.xls"),
                 skip = 5, col_names = FALSE) # readxl package
 
 # cleaning column names
@@ -58,7 +58,7 @@ head(rst) # check the data frame
 ##### pdf: South Africa government data of PoCs
 
 # Import the table
-pdf <- pdf_text(here("data_import", "data", "zaf-asr-gov-2020-p25.pdf"))
+pdf <- pdf_text(here("data", "zaf-asr-gov-2020-p25.pdf"))
 
 pdf_clean <- strsplit(pdf, "\n") # split each line
 pdf_clean <- pdf_clean[[1]] # keep only the first element
