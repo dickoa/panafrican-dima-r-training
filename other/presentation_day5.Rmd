@@ -1,0 +1,210 @@
+---
+title: "Day 5: Wrapping Up"
+subtitle: ""
+author: ""
+institute: "DIMA Units of Regional Bureaux: EHAGL, SA and WCA"
+date: "18 February 2022"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+    css: ["unhcr-slides.css", "unhcr-slides-fonts.css"]
+    includes:
+      in_header: header.html    
+---
+layout: true
+
+<div class="my-footer"><span></span></div> 
+
+<style type="text/css">
+
+h2 {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+}
+</style>
+
+```{r setup, include=FALSE}
+extrafont::loadfonts(quiet=TRUE)
+options(scipen = 999) # turn-off scientific notation like 1e+48
+
+options(htmltools.dir.version = FALSE)
+library(knitr)
+knitr::opts_chunk$set(cache = TRUE, 
+                      warning = FALSE, 
+                      message = FALSE, 
+                      dpi = 180,
+                      fig.retina = 3,
+                      fig.width = 6,
+                      fig.asp = 0.618
+                      )
+
+library(fontawesome)
+
+```
+
+---
+# Today will be about:
+
+* Recap of Last 4 Days
+
+* Small Things to Know
+  + R Coding Style
+  + Strings and Country Names
+
+* Not Yet Asked Questions
+
+* Potential Areas to Cover in the Future
+
+* Building Community
+
+* Feedback
+
+---
+# Recap of Last 4 Days
+
+* Introduction
+
+* Basics and Data Import
+
+* Data Manipulation
+
+* R Markdown
+
+---
+# Small Things to Know
+
+#### R Coding Style: Notation and Naming (Reference: [R Coding Style](https://rstudio-pubs-static.s3.amazonaws.com/390511_286f47c578694d3dbd35b6a71f3af4d6.html#))
+
+##### File names
+
+File names should be meaningful and end in **.R**.
+
+```{r, eval=FALSE}
+# Good
+ fit-models.R
+ utility_functions.R
+
+# Bad
+ foo.r
+ stuff.r
+
+```
+
+If files need to be run in sequence, prefix them with numbers:
+
+```{r, eval=FALSE}
+0-download.R
+1-parse.R
+2-explore.R
+
+```
+
+---
+# Small Things to Know
+
+#### R Coding Style: Notation and Naming (Reference: [R Coding Style](https://rstudio-pubs-static.s3.amazonaws.com/390511_286f47c578694d3dbd35b6a71f3af4d6.html#))
+
+##### Object names
+
+.pull-left[
+Variable and function names should be lowercase. Use an underscore (_) to separate words within a name. Generally, **variable** names should be **nouns** and **function** names should be **verbs**. 
+
+```{r, eval=FALSE}
+# Good
+day_one
+day_1
+dayOne
+
+# Bad
+first_day_of_the_month
+dayone
+djm1
+
+```
+]
+
+.pull-right[
+Where possible, avoid using names of existing functions and variables. Doing so will cause confusion for the readers of your code.
+
+```{r}
+# Bad
+T <- FALSE
+c <- 10
+mean <- function(x) sum(x)
+
+```
+]
+
+---
+# Small Things to Know
+
+#### R Coding Style: Syntax (Reference: [R Coding Style](https://rstudio-pubs-static.s3.amazonaws.com/390511_286f47c578694d3dbd35b6a71f3af4d6.html#))
+
+##### Spacing
+
+.pull-left[
+Place spaces around all infix operators (=, +, -, <-, etc.). The same rule applies when using = in function calls. Always put a space after a comma, and never before (just like in regular English).
+
+```{r, eval=FALSE}
+# Good
+average <- mean(feet / 12 + inches, na.rm = TRUE)
+
+# Bad
+average<-mean(feet/12+inches,na.rm=TRUE)
+
+```
+]
+
+.pull-right[
+There's a small exception to this rule: :, :: and ::: don't need spaces around them.
+
+```{r, eval=FALSE}
+# Good
+x <- 1:10
+base::get
+
+# Bad
+x <- 1 : 10
+base :: get
+
+```
+]
+
+
+---
+# Small Things to Know
+
+#### String Problem of Country Names
+
+* Recommend to use country code. Use consistent codes of one standard only.
+
+countryofasylum | countryoforigin | value
+----------------|----------|--------
+Democratic Republic of the Congo | Cote d'Ivoire | 345
+Dem. Rep. of the Congo | Côte d'Ivoire | 125
+DRC | Palestine | 453
+DRC | State of Palestine | 4675
+
+* Encoding issue
+
+---
+## Not Yet Asked Questions
+
+---
+## Potential Areas to Cover in the Future
+
+---
+## Building Community
+
+---
+## Feedback
+
