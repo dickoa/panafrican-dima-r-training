@@ -64,7 +64,7 @@ h2 {
 
 * Data Manipulation
 
-* R Markdown
+* R Markdown and Visualisation with ggplot2
 
 ---
 # Small Things to Know
@@ -172,16 +172,58 @@ base :: get
 
 #### String Problem of Country Names
 
-* Recommend to use country code. Use consistent codes of one standard only.
 
-countryofasylum | countryoforigin | value
-----------------|----------|--------
-Democratic Republic of the Congo | Cote d'Ivoire | 345
-Dem. Rep. of the Congo | Côte d'Ivoire | 125
-DRC | Palestine | 453
-DRC | State of Palestine | 4675
 
-* Encoding issue
+* Use country codes where possible
+* Example: Different country names between Dataport and ASR
+
+```
+## # A tibble: 10 x 2
+##    dataport_coo_name                                  asr_coo_name              
+##    &lt;chr&gt;                                              &lt;chr&gt;                     
+##  1 Central African Republic                           Central African Rep.      
+##  2 Congo, Republic of the                             Congo                     
+##  3 Democratic Republic of the Congo                   Dem. Rep. of the Congo    
+##  4 Gambia, Republic of The                            Gambia                    
+##  5 United Kingdom of Great Britain and North. Ireland United Kingdom of Great B~
+##  6 Côte d'Ivoire                                      Cote d'Ivoire             
+##  7 Iran, Islamic Republic of                          Iran (Islamic Rep. of)    
+##  8 Macau                                              China, Macao SAR          
+##  9 Syrian Arab Republic                               Syrian Arab Rep.          
+## 10 United Republic of Tanzania                        United Rep. of Tanzania
+```
+* Encoding issue: Côte d'Ivoire
+
+---
+# Small Things to Know
+
+#### String Problem of Country Names
+
+* Example: Different country codes between UNHCR code and ISO3
+
+```
+## # A tibble: 94 x 3
+##    iso3  unhcr unsd_name          
+##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              
+##  1 DZA   ALG   Algeria            
+##  2 AGO   ANG   Angola             
+##  3 ATG   ANT   Antigua and Barbuda
+##  4 AUS   AUL   Australia          
+##  5 AUT   AUS   Austria            
+##  6 BHR   BAH   Bahrain            
+##  7 BRB   BAR   Barbados           
+##  8 BLZ   BZE   Belize             
+##  9 BMU   BER   Bermuda            
+## 10 BTN   BHU   Bhutan             
+## # ... with 84 more rows
+```
+
+* Use `countrycode` package
+
+```r
+install.packages(countrycode)
+library(countrycode)
+```
 
 ---
 ## Not Yet Asked Questions

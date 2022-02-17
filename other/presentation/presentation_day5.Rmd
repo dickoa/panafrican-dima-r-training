@@ -185,16 +185,35 @@ base :: get
 
 #### String Problem of Country Names
 
-* Recommend to use country code. Use consistent codes of one standard only.
+```{r country_data, echo = F}
+library(here)
+source(here("other", "presentation", "countrycode_compare.R"))
+```
 
-countryofasylum | countryoforigin | value
-----------------|----------|--------
-Democratic Republic of the Congo | Cote d'Ivoire | 345
-Dem. Rep. of the Congo | Côte d'Ivoire | 125
-DRC | Palestine | 453
-DRC | State of Palestine | 4675
+* Use country codes where possible
+* Example: Different country names between Dataport and ASR
+```{r country_name, echo = F}
+dataport %>% 
+  select(dataport_coo_name, asr_coo_name) %>%
+  filter(dataport_coo_name != asr_coo_name & !is.na(asr_coo_name))
+```
+* Encoding issue: Côte d'Ivoire
 
-* Encoding issue
+---
+# Small Things to Know
+
+#### String Problem of Country Names
+
+* Example: Different country codes between UNHCR code and ISO3
+```{r country_code, echo = F}
+country_list %>% select(iso3, unhcr, unsd_name) %>% filter(iso3 != unhcr)
+```
+
+* Use `countrycode` package
+```{r countrycode_package, eval = F}
+install.packages(countrycode)
+library(countrycode)
+```
 
 ---
 ## Not Yet Asked Questions
