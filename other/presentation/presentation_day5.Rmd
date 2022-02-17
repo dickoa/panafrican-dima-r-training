@@ -77,7 +77,7 @@ library(fontawesome)
 
 * Data Manipulation
 
-* R Markdown
+* R Markdown and Visualisation with ggplot2
 
 ---
 # Small Things to Know
