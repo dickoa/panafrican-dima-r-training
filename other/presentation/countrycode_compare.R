@@ -1,5 +1,4 @@
 library(readr)
-library(here)
 library(readxl)
 library(tidyverse)
 #------------------
@@ -33,11 +32,9 @@ dataport <-
   dataport %>%
   left_join(asr, by = c("iso3" = "asr_coo_code"))
 
-#### to show
-dataport %>% 
-  select(c(dataport_coo_name, asr_coo_name)) %>%
-  filter(dataport_coo_name != asr_coo_name & !is.na(asr_coo_name))
-
 
 ####
-country_list %>% 
+names(country_list) <- c("iso3", "unhcr", "unsd_name", "unsd_short_asylum",
+                          "unsd_short_origin", "unhcr_region", "unsd_region",
+                          "unsd_subregion", "sdg_region", "iso3_2")
+
