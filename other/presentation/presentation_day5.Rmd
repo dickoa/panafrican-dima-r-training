@@ -222,5 +222,8 @@ library(countrycode)
 ## Potential Areas to Cover in the Future
 
 ---
-## Feedback and Building Community
-
+# Feedback and Building Community
+```{r image_first_then, echo = FALSE, fig.width = 5, fig.align = "center"}
+knitr::include_graphics("./image/r_first_then.png")
+```
+<font size="1"> Illustration by Allison Horst </font> 
