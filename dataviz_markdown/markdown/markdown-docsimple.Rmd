@@ -1,0 +1,99 @@
+---
+author: "Pan-Africa DIMA Units"
+date: "`r format(Sys.Date(),  '%d %B %Y')`"
+output:
+  unhcrdown::docx_simple
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.cap = TRUE, fig.width = 6.27)
+library(officedown)
+library(officer)
+library(tidyverse)
+library(dplyr)
+library(readr)
+library(knitr)
+library(flextable)
+
+asr <- read_csv("C:/Users/FEITOSAV/OneDrive - UNHCR/Documents/R/panafrican-dima-r-training/dataviz_markdown/markdown/data/asr_demographics.csv")
+
+asr_year <- "2019" # Created this object to facilitate filtering in next reports
+
+asr_total <- sum(asr$total)
+
+asr_top5 <- asr %>%
+  filter(year == asr_year) %>% # Link with object above
+  group_by(asylum_name) %>% # Grouped by country of asylum
+  select(c("asylum_name", "total")) %>% # Selected specific columns from the original data frame
+  summarize(total_sum = sum(total)) %>%
+  arrange(desc(total_sum)) %>%
+  head(5)
+
+```
+
+---
+title: "Population Statistics `r asr_year`"
+---
+
+# Methodology
+
+Let's say we are drafting a report that will be updated every quarter. The methodology section will not change substantially. We can leave the text as it is, but adding dynamic parts. For example: this report analyzes data on UNHCR's population of concern in the year **`r asr_year`**. This number will be updated whenever we filter a different year in the object above.
+
+## Basic commands
+
+In this subsection, we will introduce some basic commands for reports in markdown.
+
+### Style of text
+
+We can customize the style of the text. 
+**Bold text** 
+*Italic text* 
+***Bold and italic text*** 
+
+### Quotes
+::: {custom-style="Quote"}
+
+"It is further proof that refugee movements and the broader issue of migration of populations ... is a global challenge that cannot be confined to a few countries."
+
+:::
+
+**Filippo Grandi**
+
+Footnotes are also included and will be added automatically to the bottom of the page like the following ones. This is a footnote^[Text of the footnote], it can include anything and can also be stylize UNHCR^[The **United Nations** High Commissioner for Refugees <https://www.unhcr.org/>]
+
+### Lists
+
+Lists also are automatic but they will need extra manual tweaking if you want to apply a more adapted paragraph style with less spacing. This apply for both ordered and unordered lists.
+
+* item 1
+* item 2
+* item 3
+
+## Tables
+
+Tables will come with a default style. More advanced layout can be achieved using the [flextable](https://ardata-fr.github.io/flextable-book/index.html) package. Like the lists there is a built-in paragraph style if you want to improve the look and feel of your tables.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Population of Concern by Country of Asylum"}
+head(asr_top5)
+```
+
+<br>
+
+\newpage
+
+# Plots
+
+Creating plots in R is an exciting universe in itself. Let's analyze the code below and reverse-engineer the main elements to consider when creating a graph with R.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results = 'hide'}
+library(ggplot2)
+library(unhcrthemes)
+library(scales)
+
+column_graph <- ggplot(asr_top5, aes(asylum_name, total_sum)) +
+  geom_col(fill = unhcr_pal(n = 1, "pal_blue"))
+
+column_graph
+```
+
